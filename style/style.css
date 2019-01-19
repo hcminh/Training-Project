@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.text-heading {
+    margin: 2rem 0;
+}
+
+.div-head {
+    cursor: pointer;
+    user-select: none;
+}

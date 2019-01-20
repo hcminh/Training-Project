@@ -128,11 +128,13 @@
                                 <div class="step">
                                     <h6>Clone dự án bằng git</h6>
                                     <p>Vào thư mục muốn lưu dự án, mở git bash lên (Chuột phải -> chọn git bash here)</p>
+                                    <p>Nhập <strong>git init</strong> để bắt đầu sử dụng git</p>
                                     <figure>
                                         <img src="./images/git-commands/git-init.PNG" alt="" style="width:100%">
                                         <figcaption><p>Nhập "git init" để bắt đầu sử dụng git</p></figcaption>
                                     </figure> 
                                     <p>Clone dự án</p>
+                                    <p>Nhập <strong>git clone <i>link_vừa_coppy_trên_web</i></strong></p>
                                     <figure>
                                         <img src="./images/git-commands/git-clone-step-2.PNG" alt="" style="width:100%">
                                         <figcaption><p>Nhập "git clone (link dự án vừa coppy trên web)"</p></figcaption>
@@ -143,10 +145,32 @@
                                         <figcaption><p>Sau khi clone thành công git bash sẽ tương tự như hình</p></figcaption>
                                     </figure> 
                                 </div> <!--end step-->
+                              </div><!--end card-body-->
+                            </div><!--end Clone-body-->
+                         </div><!--Card Clone-->
+
+                        <div class="card">
+                            <div class="card-header div-head" data-toggle="collapse" data-target="#process-code">
+                              <h5 class="mb-0"> 
+                                  <span><img src="./images/icons/icon-danger.png" alt=""></span> Quá Trình Code
+                              </h5>
+                            </div>
+                            <div id="process-code" class="collapse">
+                              <div class="card-body">
+                                  
                                 <div class="step">
                                     <h6>Cài đặt thư viên cho dự án</h6>
                                     <p>Mở dự án vừa clone về, bật git bash trong thư mục vừa clone về</p>
-                                    <p>Nhập lệnh "npm install"</p>
+                                    <p>nhập <strong>git checkout develop</strong><i>develop hoặc dev tùy mỗi dự án lead sẽ đặt tên khác nhau</i></p>
+                                    <figure>
+                                        <img src="./images/git-commands/git-checkout.PNG" alt="" style="width:100%">
+                                        <figcaption><p>Chuyển qua branch develop</p></figcaption>
+                                    </figure> 
+                                    <h6>Vì sao phải chuyển qua branch develop để code ?</h6>
+                                    <p>_Vì branch develop là kênh tổng hợp đầy đủ các chức năng nhất. Các branch chức năng nhỏ sẽ được ghép vào branch develop và fix lỗi bởi leader</p>
+                                    <p>_Branch master không được sử dụng vì branch chỉ chứa những code tốt nhất, để lấy trực tiếp code từ đó bỏ vào hệ thống thật.</p>
+
+                                    <p>Nhập <strong> npm install</strong></p>
                                     <figure>
                                         <img src="./images/git-commands/npm-install.PNG" alt="" style="width:100%">
                                         <figcaption><p>"npm install" để cài đặt các thư viện (package) đã được khai báo trong dự án</p></figcaption>
@@ -158,14 +182,64 @@
                                         <figcaption><p>Các package được khai báo trong phần "dependencies"</p></figcaption>
                                     </figure>
                                 </div> <!--end step-->
-                                
+                                  <div class="step">
+                                      update...
+                                  </div> <!--end step-->
                               </div><!--end card-body-->
                             </div><!--end Clone-body-->
-                        <!-- </div> Card Clone-->
+                         </div><!--Card Clone-->
+
+                        <div class="card">
+                            <div class="card-header div-head" data-toggle="collapse" data-target="#push">
+                              <h5 class="mb-0"> 
+                                  <span><img src="./images/icons/icon-upload.png" alt=""></span> Push code của mình lên
+                              </h5>
+                            </div>
+                            <div id="push" class="collapse">
+                              <div class="card-body">
+                                  <div class="step">
+                                      <h6>Kiểm tra branch hiện tại</h6>
+                                      <p>Mở git bash tại thư mục dự án</p>
+                                      <p>Nhập <strong>git branch</strong> để kiểm tra xem branh hiện tại</p>
+                                      <p>Nhập <strong>git branch <i>tên_branch_mới</i></strong></p>
+                                      <p><Strong>Lưu ý: </Strong> đặt tên branch phải liên quan đến chức năng mà code của mình thực hiện</p>
+                                      <figure>
+                                          <img src="./images/git-commands/git-branch.PNG" alt="" style="width:100%">
+                                          <figcaption><p>Nên kiểm tra branch trước khi tạo branch để tránh trùng tên</p></figcaption>
+                                      </figure> 
+                                      <h6>Chuyển qua branch vừa tạo</h6>
+                                      <p>Nhập <strong>git checkout <i>tên_branch_vừa_tạo</i></strong></p>
+                                      <figure>
+                                          <img src="./images/git-commands/git-branch-checkout.PNG" alt="" style="width:100%">
+                                          <figcaption><p>"git checkout" để chuyển branch khác</p></figcaption>
+                                      </figure>
+                                  </div> <!--end step-->
+                                  <div class="step">
+                                    <h6>Sau khi đã chuyển branch xong</h6>
+                                    <p>Nhập <strong>git add --all</strong></p>
+                                    <p>Sau đó nhập <strong>git commit -m '</strong><i>mô tả ngắn về code mình chuẩn bị push</i><strong>'</strong></p>
+                                    <figure>
+                                        <img src="./images/git-commands/git-add-commit.PNG" alt="" style="width:100%">
+                                        <figcaption><p>"git add" sau đó "git commit -m '' "</p></figcaption>
+                                    </figure> 
+                                    <h6>Push code lên gitlab</h6>
+                                    <p>Nhập <strong>git push origin <i>tên_branch_vừa_tạo</i></strong></p>
+                                    <figure>
+                                        <img src="./images/git-commands/git-push.PNG" alt="" style="width:100%">
+                                        <figcaption><p>"git push tên_branch" để up code lên"</p></figcaption>
+                                    </figure> 
+                                    <figure>
+                                        <img src="./images/git-commands/git-push-done.PNG" alt="" style="width:100%">
+                                        <figcaption><p>nhập TK MK gitlab để xác nhận</p></figcaption>
+                                    </figure> 
+                                  </div> <!--end step-->
+                              </div><!--end card-body-->
+                            </div><!--end Clone-body-->
+                         </div><!--Card Push-->
                         
                     </div><!--end card-body-->
                   </div><!--end setup-body-->
-                </div> <!--end setting card-->
+                </div> <!--end git card-->
             </div>
         </div>
     </div>

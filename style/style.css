@@ -12,3 +12,18 @@
     user-select: none;
 }
 
+figure {
+    background: #e3e1e1;
+    margin: 0 0 1rem;
+    padding: 5px;
+    border-radius: 3px;
+    font-style: italic;
+}
+
+figure img {
+    border-radius: 3px;
+}
+
+figure p {
+    margin: 0.4rem 0 0.4rem 0.2rem;
+}
